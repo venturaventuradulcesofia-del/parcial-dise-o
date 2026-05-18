@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Simulador de Ensamblaje PC</title>
+
+<!-- FUENTE -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* ===== GENERAL ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Rockwell Extra Bold;
+    background:linear-gradient(to right,#0f172a,#1e293b,#334155);
+    color:white;
+    min-height:100vh;
+    padding:30px;
+}
+
+/* ===== TITULO ===== */
+
+h1{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:40px;
+    color:#EE27F5;
+    text-shadow:0px 0px 10px cyan;
+}
+
+/* ===== CONTENEDOR ===== */
+
+.contenedor{
+    max-width:900px;
+    margin:auto;
+}
+
+/* ===== CARDS ===== */
+
+details{
+    background:#1e293b;
+    margin-bottom:20px;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0px 0px 15px rgba(180, 0, 255, 0.6);
+}
+
+/* EFECTO HOVER */
+
+details:hover{
+    transform:scale(1.01);
+    box-shadow:0px 0px 20px cyan;
+}
+
+/* CUANDO SE ABRE */
+
+details[open]{
+    border-left:6px solid #38bdf8;
+}
+
+/* ===== TITULO DEL COMPONENTE ===== */
+
+summary{
+    padding:20px;
+    cursor:pointer;
+    font-size:22px;
+    font-weight:bold;
+    list-style:none;
+    transition:0.3s;
+}
+
+summary:hover{
+    background:#334155;
+}
+
+/* QUITAR FLECHA */
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+/* ===== CONTENIDO ===== */
+
+.info{
+    padding:25px;
+    text-align:center;
+    animation:fade 0.4s;
+}
+
+/* ANIMACION */
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ===== IMAGEN ===== */
+
+.info img{
+    width:250px;
+    max-width:100%;
+    margin-bottom:20px;
+    transition:0.3s;
+}
+
+.info img:hover{
+    transform:scale(1.05);
+}
+
+/* ===== TEXTO ===== */
+
+.info p{
+    font-size:18px;
+    line-height:1.6;
+    color:#e2e8f0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:700px){
+
+    h1{
+        font-size:28px;
+    }
+
+    summary{
+        font-size:18px;
+    }
+
+    .info img{
+        width:180px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>PARCIAL SIMULADOR DE ENSAMBLAJE DE PC</h1>
+<h3>Dulce Ventura</h3>
+<div class="contenedor">
+
+    <!-- PROCESADOR -->
+
+    <details>
+        <summary>Módulo 1</summary>
+        <summary>1.FUENTE DE ALIMENTACIÓN</summary>
+        <div class="info">
+            <img src="e1.png" >
+            <p>
+                Colócala en la parte superior trasera del gabinete. Usa las flechas del simulador para girarla hasta que encaje.<br>
+                Tornillos de la fuente: Asegura la fuente al chasis con sus tornillos correspondientes.<br>
+            </p>
+
+        </div>
+    </details>
+
+    <!-- RAM -->
+
+    <details>
+        <summary>Módulo 2: Placa base</summary>
+        <summary>2.Memoria RAM 1 y 2</summary>
+        <div class="info">
+            <img src="ram2.png">
+            <p>
+                Inserta cada módulo en sus ranuras correspondientes y presiona las pestañas laterales blancas de cada extremo hacia adentro para bloquearlas
+            </p>
+
+        </div>
+    </details>
+
+    <details>
+        <summary>3.CPU</summary>
+        <div class="info">
+            <img src="cpu.png">
+            <p>
+               Insértalo en el socket alineando el triángulo dorado de la esquina, cierra la placa metálica y baja la palanca de sujeción.
+            </p>
+
+        </div>
+    </details>
+
+    <details>
+        <summary>4.PASTA TERMICA</summary>
+        <div class="info">
+            <img src="pasta.png">
+            <p>
+                Aplica una gota en el centro de la parte superior del CPU.
+            </p>
+
+        </div>
+    </details>
+
+    <details>
+        <summary>5.DISPARADOR DE CALOR</summary>
+        <div class="info">
+            <img src="calor.png">
+            <p>
+                Colócalo sobre el CPU, presiona los cuatro pines de sujeción hacia abajo para trabarlo y conecta su cable de energía de 4 pines al conector
+            </p>
+
+        </div>
+    </details>
+
+    <details>
+        <summary>Modulo 3: Adaptador de tarjetas </summary>
+        <summary>6.Tarjeta de red NIC</summary>
+        <div class="info">
+            <img src="tarjeta.png">
+            <p>
+                Insértala en la ranura PCI correspondiente y asegúrala con su tornillo en el chasis.
+            </p>
+
+        </div>
+    </details>
+
+    <details>
+        <summary>7.Wifi NIC</summary>
+        <div class="info">
+            <img src="wifi.png">
+            <p>
+                Colócala en la ranura PCI pequeña y fíjala con su tornillo.
+            </p>
+
+        </div>
+    </details>
+
+  <details>
+        <summary>8.Adaptador de video</summary>
+        <div class="info">
+            <img src="adaptador.png">
+            <p>
+                Encájala en la ranura principal PCIe x16 y atorníllala firmemente al gabinete.
+            </p>
+
+        </div>
+ </details>
+
+<details>
+        <summary>Módulo 4: Discos internos y unidades externas </summary>
+        <summary>9.Disco duro</summary>
+        <div class="info">
+            <img src="duro.png">
+            <p>
+                Deslízalo en la bahía interna de 3.5 pulgadas desde el interior del gabinete y asegúralo con dos tornillos en cada lateral.
+            </p>
+
+        </div>
+</details>
+
+<details>
+        <summary>10.Unidad óptica</summary>
+        <div class="info">
+            <img src="optica.png">
+            <p>
+                Introdúcela en la bahía superior de 5.25 pulgadas desde el frente (exterior) del gabinete y colócale sus tornillos laterales.
+            </p>
+
+        </div>
+ </details>
+
+ <details>
+        <summary>11.Unidad de disquete</summary>
+        <div class="info">
+            <img src="disquete.png">
+            <p>
+                Introdúcela en la bahía intermedia de 3.5 pulgadas desde el frente (exterior) y fíjala con sus tornillos correspondientes.
+            </p>
+
+        </div>
+ </details>
+
+ <details>
+        <summary>Módulo 5: Cables internos</summary>
+        <summary>12.Cable de disquete</summary>
+        <div class="info">
+            <img src="cable.png">
+            <p>
+                Conecta un extremo a la placa base y el otro a la unidad de disquete (alineando el Pin 1).
+            </p>
+
+        </div>
+</details>
+
+<details>
+        <summary>13.SATA cable (Cable de datos):</summary>
+        <div class="info">
+            <img src="sata.png">
+            <p>
+               Conecta una punta al puerto SATA de la placa base y la otra punta al disco duro.
+            </p>
+
+        </div>
+ </details>
+
+  <details>
+        <summary>Módulo 6: Cables externos</summary>
+        <summary>14.Panel</summary>
+        <div class="info">
+            <img src="panel.png">
+            <p>
+                Conecta un extremo a la placa base y el otro a la unidad de disquete (alineando el Pin 1).<br>
+                Tornillos del panel: Fija los paneles con los tornillos de mariposa manuales<br>
+            </p>
+
+        </div>
+</details>
+
+ <details>
+        <summary>15.Cable monitor</summary>
+        <div class="info">
+            <img src="monitor.png" alt="Unidad de disquete">
+            <p>
+                Atornilla el cable VGA o DVI al puerto del adaptador de video.
+            </p>
+
+        </div>
+ </details>
+
+ <details>
+        <summary>16.Cable de teclado (Morado) y Cable de mouse (Verde)</summary>
+        <div class="info">
+            <img src="mause.png">
+            <p>
+             Conéctalos en los puertos PS/2 de la parte superior trasera
+            </p>
+
+        </div>
+ </details>
+
+  <details>
+        <summary>17.Ethernet</summary>
+        <div class="info">
+            <img src="ternet.png">
+            <p>
+             Inserta el cable de red RJ45 al puerto de la tarjeta NIC
+            </p>
+
+        </div>
+ </details>
+
+ <details>
+        <summary>18.Wifi antena</summary>
+        <div class="info">
+            <img src="antena.png">
+            <p>
+             Enrosca la pequeña antena negra en la parte trasera de la tarjeta Wifi NIC.
+            </p>
+
+        </div>
+ </details>
+
+ <details>
+        <summary>19.Cable de alimentación</summary>
+        <div class="info">
+            <img src="ali.png">
+            <p>
+             Conéctalo en el puerto trasero de la fuente de poder y el otro extremo al tomacorriente de la pared.
+            </p>
+
+        </div>
+ </details>
+</div>
+
+</body>
+</html>
